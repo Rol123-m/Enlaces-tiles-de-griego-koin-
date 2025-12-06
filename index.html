@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos de Griego Koiné - Seminario Teológico Bautista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding-bottom: 60px;
+        }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .logo-greek {
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 3rem;
+            color: #f1c40f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .intro-text h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Categorías */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(to right, var(--secondary), transparent) 1;
+        }
+
+        .category-header i {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            color: var(--secondary);
+        }
+
+        .category-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Tarjetas de recursos */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-header {
+            padding: 1.5rem 1.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            position: relative;
+        }
+
+        .resource-icon {
+            position: absolute;
+            top: -25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-icon i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .resource-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .resource-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .resource-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resource-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .resource-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .resource-link i {
+            font-size: 1rem;
+        }
+
+        /* Dosificación diaria especial */
+        .daily-dose-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px dashed var(--secondary);
+        }
+
+        .daily-dose-card .resource-header {
+            background: linear-gradient(to right, #27ae60, #2ecc71);
+        }
+
+        .daily-dose-card .resource-link {
+            background: #27ae60;
+        }
+
+        .daily-dose-card .resource-link:hover {
+            background: #219653;
+        }
+
+        /* Estilos para secciones específicas */
+        #websites .resource-header { background: linear-gradient(to right, #3498db, #2980b9); }
+        #videos .resource-header { background: linear-gradient(to right, #e74c3c, #c0392b); }
+        #tools .resource-header { background: linear-gradient(to right, #9b59b6, #8e44ad); }
+        #communities .resource-header { background: linear-gradient(to right, #f39c12, #e67e22); }
+
+        /* Nota al pie */
+        .footer-note {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .footer-note h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-note p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .daily-dose-card {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-greek {
+                font-size: 2.5rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.2rem 0.8rem;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .resource-header {
+                padding: 1.2rem 1.2rem 0.8rem;
+            }
+            
+            .resource-body {
+                padding: 1.2rem;
+            }
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .resource-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .resource-card:nth-child(1) { animation-delay: 0.1s; }
+        .resource-card:nth-child(2) { animation-delay: 0.2s; }
+        .resource-card:nth-child(3) { animation-delay: 0.3s; }
+        .resource-card:nth-child(4) { animation-delay: 0.4s; }
+        .resource-card:nth-child(5) { animation-delay: 0.5s; }
+        .resource-card:nth-child(6) { animation-delay: 0.6s; }
+        .resource-card:nth-child(7) { animation-delay: 0.7s; }
+        .resource-card:nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-greek">ΚΟΙΝΗ</span>
+            </div>
+            <h1>Recursos de Estudio - Griego Koiné</h1>
+            <p class="subtitle">Herramientas, enlaces y materiales esenciales para dominar el griego del Nuevo Testamento</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="intro-text">
+            <h2>Tu Guía Completa para Aprender Griego Koiné</h2>
+            <p>Esta colección de recursos cuidadosamente seleccionados te ayudará en tu viaje de aprendizaje del griego koiné. Desde herramientas digitales hasta comunidades de estudio, aquí encontrarás todo lo necesario para profundizar en el idioma original del Nuevo Testamento.</p>
+        </section>
+
+        <!-- Sección: Dosificación Diaria -->
+        <section class="category-section" id="daily-dose">
+            <div class="category-header">
+                <i class="fas fa-calendar-day"></i>
+                <h2>Dosificación Diaria de Griego</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card daily-dose-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3 class="resource-title">Dosis Diaria de Griego</h3>
+                        <p class="resource-subtitle">Aprende un poco cada día</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">El método más efectivo para aprender griego es la constancia. Esta sección ofrece recursos diseñados para estudiar unos minutos cada día, construyendo conocimiento de forma progresiva y sostenible.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Constancia</span>
+                            <span class="tag">Progresivo</span>
+                            <span class="tag">Rutina</span>
+                            <span class="tag">Memorización</span>
+                        </div>
+                        <a href="https://dailydoseofgreek.com" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Visitar Daily Dose of Greek
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Sitios Web Esenciales -->
+        <section class="category-section" id="websites">
+            <div class="category-header">
+                <i class="fas fa-globe"></i>
+                <h2>Sitios Web Esenciales</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-book-bible"></i>
+                        </div>
+                        <h3 class="resource-title">Blue Letter Bible</h3>
+                        <p class="resource-subtitle">Herramientas de estudio bíblico</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Una de las herramientas más completas para estudiar la Biblia en sus idiomas originales. Ofrece interlineales, léxicos, concordancias y comentarios.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Interlineal</span>
+                            <span class="tag">Concordancia</span>
+                            <span class="tag">Léxico</span>
+                        </div>
+                        <a href="https://www.blueletterbible.org" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3 class="resource-title">STEP Bible</h3>
+                        <p class="resource-subtitle">Tyndale House</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Excelente herramienta para estudio bíblico con interlineal griego-español, análisis gramatical y herramientas de traducción.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Interlineal</span>
+                            <span class="tag">Gramática</span>
+                            <span class="tag">Traducción</span>
+                        </div>
+                        <a href="https://www.stepbible.org" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="resource-title">BibleHub</h3>
+                        <p class="resource-subtitle">Interlineales y comentarios</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Ofrece interlineales griego-español, traducción palabra por palabra, y acceso a múltiples versiones y comentarios bíblicos.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Interlineal</span>
+                            <span class="tag">Comentarios</span>
+                            <span class="tag">Versiones</span>
+                        </div>
+                        <a href="https://biblehub.com" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Visitar Sitio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Videos y Tutoriales -->
+        <section class="category-section" id="videos">
+            <div class="category-header">
+                <i class="fas fa-video"></i>
+                <h2>Videos y Tutoriales</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3 class="resource-title">Biblical Mastery Academy</h3>
+                        <p class="resource-subtitle">Curso completo en YouTube</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Canales de YouTube con lecciones gratuitas de griego koiné desde cero, explicaciones gramaticales y ejercicios prácticos.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Gratuito</span>
+                            <span class="tag">Desde cero</span>
+                            <span class="tag">Visual</span>
+                        </div>
+                        <a href="https://www.youtube.com/c/BiblicalMasteryAcademy" target="_blank" class="resource-link">
+                            <i class="fab fa-youtube"></i> Ver Canal
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="resource-title">The Bible Project - Greek</h3>
+                        <p class="resource-subtitle">Videos educativos animados</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Videos animados que explican conceptos del griego bíblico de manera accesible y visual, perfecto para principiantes.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Animado</span>
+                            <span class="tag">Visual</span>
+                            <span class="tag">Educativo</span>
+                        </div>
+                        <a href="https://bibleproject.com/explore/video/greek/" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Ver Videos
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3 class="resource-title">Greek Audio NT</h3>
+                        <p class="resource-subtitle">Audio del Nuevo Testamento</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Audios del Nuevo Testamento en griego koiné para practicar pronunciación y comprensión auditiva.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Audio</span>
+                            <span class="tag">Pronunciación</span>
+                            <span class="tag">Comprensión</span>
+                        </div>
+                        <a href="https://www.greekaudiont.com" target="_blank" class="resource-link">
+                            <i class="fas fa-headphones"></i> Escuchar Audio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Herramientas Digitales -->
+        <section class="category-section" id="tools">
+            <div class="category-header">
+                <i class="fas fa-tools"></i>
+                <h2>Herramientas Digitales</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="resource-title">Flashcards Digitales</h3>
+                        <p class="resource-subtitle">Anki y Memrise</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Plataformas con decks de vocabulario griego, verbos y gramática. Ideal para memorización sistemática.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Memorización</span>
+                            <span class="tag">Vocabulario</span>
+                            <span class="tag">App</span>
+                        </div>
+                        <a href="https://ankiweb.net/shared/decks/greek" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Descargar Decks
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <h3 class="resource-title">Teclado Griego Online</h3>
+                        <p class="resource-subtitle">Escribe en griego fácilmente</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Teclado virtual para escribir en griego sin instalar software. Incluye acentos y caracteres especiales.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Teclado</span>
+                            <span class="tag">Escritura</span>
+                            <span class="tag">Online</span>
+                        </div>
+                        <a href="https://www.lexilogos.com/keyboard/greek_ancient.htm" target="_blank" class="resource-link">
+                            <i class="fas fa-keyboard"></i> Usar Teclado
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="resource-title">Perseus Digital Library</h3>
+                        <p class="resource-subtitle">Textos griegos con análisis</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Extensa biblioteca digital con textos griegos clásicos y herramientas de análisis morfológico.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Textos</span>
+                            <span class="tag">Análisis</span>
+                            <span class="tag">Biblioteca</span>
+                        </div>
+                        <a href="http://www.perseus.tufts.edu/hopper/" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Explorar Biblioteca
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Comunidades y Foros -->
+        <section class="category-section" id="communities">
+            <div class="category-header">
+                <i class="fas fa-users"></i>
+                <h2>Comunidades y Foros</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fab fa-reddit"></i>
+                        </div>
+                        <h3 class="resource-title">r/Koine</h3>
+                        <p class="resource-subtitle">Comunidad en Reddit</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Foro activo donde puedes hacer preguntas, compartir recursos y conectarte con otros estudiantes de griego koiné.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Comunidad</span>
+                            <span class="tag">Foro</span>
+                            <span class="tag">Preguntas</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/Koine/" target="_blank" class="resource-link">
+                            <i class="fab fa-reddit"></i> Unirse a la Comunidad
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="resource-title">B-Greek Forum</h3>
+                        <p class="resource-subtitle">Foro académico de griego bíblico</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Foro especializado donde académicos y estudiantes discuten cuestiones de gramática, sintaxis y traducción.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Académico</span>
+                            <span class="tag">Discusión</span>
+                            <span class="tag">Especializado</span>
+                        </div>
+                        <a href="https://www.ibiblio.org/bgreek/forum/" target="_blank" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Visitar Foro
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <h3 class="resource-title">Grupos de Facebook</h3>
+                        <p class="resource-subtitle">Comunidades de aprendizaje</p>
+                    </div>
+                    <div class="resource-body">
+                        <p class="resource-description">Grupos activos donde compartir dudas, recursos y experiencias con otros estudiantes de griego koiné.</p>
+                        <div class="resource-tags">
+                            <span class="tag">Social</span>
+                            <span class="tag">Grupos</span>
+                            <span class="tag">Compartir</span>
+                        </div>
+                        <a href="https://www.facebook.com/groups/koinegreek" target="_blank" class="resource-link">
+                            <i class="fab fa-facebook"></i> Explorar Grupos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-note">
+            <h3>💡 Consejo para el Estudio</h3>
+            <p>La clave para aprender griego koiné es la constancia. Dedica al menos 15-30 minutos diarios a practicar, combinando diferentes recursos: un día usa flashcards, otro ve un video, otro practica con un interlineal. La variedad mantiene el interés y fortalece diferentes habilidades.</p>
+            <p style="margin-top: 1rem; font-style: italic; color: var(--primary);">"Μικρὰ ῥοπὴ συνεχὴς ποιεῖ τὸ ἔργον" - Pequeño esfuerzo continuo hace el trabajo.</p>
+        </div>
+    </div>
+
+    <script>
+        // Efecto de scroll suave para las tarjetas
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.resource-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Efecto de hover mejorado
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
